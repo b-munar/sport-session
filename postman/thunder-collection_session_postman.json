@@ -1,0 +1,71 @@
+{
+    "info": {
+        "_postman_id": "a665a120-9721-4200-80e5-7731ca0a0139",
+        "name": "session",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Session get",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "localhost:6750/sport-session",
+                    "path": [
+                        "sport-session"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "6750"
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyOGEzYWQ3Ny03ZDNjLTQ3ZTMtOWM0Mi04NThjYTNlYzUyMjIiLCJpYXQiOjE3MTQ3OTIwMDksImV4cCI6MTcxNDgwMjgwOSwicm9sZSI6Mn0.E73lNdU8_GryrLZUvNsIdTAfHPOxBqUBV86kqB4v1_E",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Session create",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:6750/sport-session",
+                    "path": [
+                        "sport-session"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "6750"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n \"session\": \"notee\"\n}"
+                },
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyOGEzYWQ3Ny03ZDNjLTQ3ZTMtOWM0Mi04NThjYTNlYzUyMjIiLCJpYXQiOjE3MTQ3OTIwMDksImV4cCI6MTcxNDgwMjgwOSwicm9sZSI6Mn0.E73lNdU8_GryrLZUvNsIdTAfHPOxBqUBV86kqB4v1_E",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
