@@ -1,9 +1,9 @@
 from src.database.base import Base
 from src.database.engine import engine
 
-from src.models.note_model import NoteModel
+from src.models.sport_session_model import SportSessionModel
 
-table_objects = [NoteModel.__table__]
+table_objects = [SportSessionModel.__table__]
 
 if __name__ == "__main__":
     Base.metadata.create_all(
