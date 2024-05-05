@@ -46,5 +46,5 @@ class SportSessionController(Resource):
         session.close()
         
         sport_sessions = [sport_session_schema.dump(sport_session) for sport_session in query]
-        return sport_sessions, 200
+        return {"sessions":sport_sessions}, 200
 
