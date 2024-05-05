@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "fcadb97f-c67c-4dd6-a3b2-5a809fcdef5d",
+		"name": "session",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34080647"
+	},
+	"item": [
+		{
+			"name": "Session get",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyOWEzYWQ3OC02ZDNjLTQ2ZTMtOWM0Mi04NTdjYTNlYzUyMjAiLCJpYXQiOjE3MTQ5NDE5MzAsImV4cCI6MTcxNDk1MjczMCwicm9sZSI6MX0.cbcu1hvrsO7ISJFy7n1Dk_HHb-3Zl_LxeywFlBjdmP4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:6750/sport-session",
+					"host": [
+						"localhost"
+					],
+					"port": "6750",
+					"path": [
+						"sport-session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Session create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyOWEzYWQ3OC02ZDNjLTQ2ZTMtOWM0Mi04NTdjYTNlYzUyMjAiLCJpYXQiOjE3MTQ5NDE5MzAsImV4cCI6MTcxNDk1MjczMCwicm9sZSI6MX0.cbcu1hvrsO7ISJFy7n1Dk_HHb-3Zl_LxeywFlBjdmP4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"trainingDayId\": \"86559da0-6100-45e1-84e7-85a304a6be21\",\n \"startDate\": \"2022-06-14T13:00:00-07:00\",\n \"endDate\": \"2022-06-14T13:00:00-07:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:6750/sport-session",
+					"host": [
+						"localhost"
+					],
+					"port": "6750",
+					"path": [
+						"sport-session"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
