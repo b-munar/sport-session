@@ -5,6 +5,6 @@ class SportSessionDeserializeSchema(Schema):
 
 class SportSessionSerializeSchema(Schema):
     id = fields.UUID()
-    session = fields.String()
-    updateAt = fields.DateTime(format='%Y-%m-%dT%H:%M:%S%z')
-    createdAt = fields.DateTime(format='%Y-%m-%dT%H:%M:%S%z')
+    trainingDay = fields.UUID()
+    endDate = fields.DateTime(format='%Y-%m-%dT%H:%M:%S%z')
+    startDate = fields.DateTime(format='%Y-%m-%dT%H:%M:%S%z')
