@@ -1,4 +1,5 @@
 import pytest
+import json
 from unittest.mock import patch
 from functools import wraps
 
@@ -26,5 +27,19 @@ def test_request_ping(client):
     response = client.get("/sport-session/ping")
     assert response.status_code == 200
     assert b"pong" in response.data
+    
+def test_request_post_register(client):
+    url = "/sport-session"
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = {
+ "trainingDayId": "86559da0-6100-45e1-84e7-85a304a6be21",
+ "startDate": "2022-06-14T13:00:00-07:00",
+ "endDate": "2022-06-14T13:00:00-07:00"
+}
+    response2 = client.post(url, data=json.dumps(data), headers=headers)
+    assert response2.status_code == 201
+    
 
 

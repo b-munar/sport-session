@@ -18,6 +18,7 @@ class SportSessionController(Resource):
         
         errors = sport_session_create_schema.validate(request_json)
         if errors:
+            print(errors)
             return "", 400
         
         sport_session_create_dump = sport_session_create_schema.dump(request_json)
