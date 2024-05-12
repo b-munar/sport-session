@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: service-sport-session
+  annotations:
+    cloud.google.com/backend-config: '{"default": "sport-session-config"}'
+spec:
+  type: NodePort
+  selector:
+    app: sport-session
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 31025

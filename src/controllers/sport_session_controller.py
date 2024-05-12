@@ -18,6 +18,7 @@ class SportSessionController(Resource):
         
         errors = sport_session_create_schema.validate(request_json)
         if errors:
+            print(errors)
             return "", 400
         
         sport_session_create_dump = sport_session_create_schema.dump(request_json)
@@ -45,5 +46,5 @@ class SportSessionController(Resource):
         session.close()
         
         sport_sessions = [sport_session_schema.dump(sport_session) for sport_session in query]
-        return sport_sessions, 200
+        return {"sessions":sport_sessions}, 200
 
