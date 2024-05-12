@@ -8,6 +8,6 @@ class SportSessionModel(Base):
     __tablename__ = 'sport_session'
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
     user = Column(UUID(as_uuid=True), nullable=False)
-    session = Column(String(), nullable=False)
-    createdAt = Column(DateTime(), default=datetime.now(timezone.utc) )
-    updateAt = Column(DateTime(), default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc) )
+    trainingDayId = Column(UUID(as_uuid=True), nullable=False)
+    startDate = Column(DateTime(), default=datetime.now(timezone.utc) )
+    endDate = Column(DateTime(), default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc) )
