@@ -34,10 +34,14 @@ def test_request_post_register(client):
         "Content-Type": "application/json"
     }
     data = {
- "trainingDayId": "86559da0-6100-45e1-84e7-85a304a6be21",
- "startDate": "2022-06-14T13:00:00-07:00",
- "endDate": "2022-06-14T13:00:00-07:00"
-}
+    "trainingDayId": "86559da0-6100-45e1-84e7-85a304a6be21",
+    "FTP": 70,
+    "VO": 10, 
+    "RPM": 98,
+    "KCAL": 300,
+    "startDate": "2022-06-14T17:00:00-07:00",
+    "endDate": "2022-06-14T17:30:00-07:00"
+    }
     response2 = client.post(url, data=json.dumps(data), headers=headers)
     assert response2.status_code == 201
     
@@ -47,12 +51,35 @@ def test_request_get(client):
         "Content-Type": "application/json"
     }
     data = {
- "trainingDayId": "86559da0-6100-45e1-84e7-85a304a6be21",
- "startDate": "2022-06-14T13:00:00-07:00",
- "endDate": "2022-06-14T13:00:00-07:00"
-}
+    "trainingDayId": "86559da0-6100-45e1-84e7-85a304a6be21",
+    "FTP": 70,
+    "VO": 10, 
+     "RPM": 98,
+    "KCAL": 300,
+     "startDate": "2022-06-14T17:00:00-07:00",
+    "endDate": "2022-06-14T17:30:00-07:00"
+    }
     client.post(url, data=json.dumps(data), headers=headers)
     response = client.get("/sport-session")
     assert response.status_code == 200
     assert b"sessions" in response.data
+    
+def test_request_get_avg(client):
+    url = "/sport-session/avg"
+    headers = {
+        "Content-Type": "application/json"
+    }
+    data = {
+    "trainingDayId": "86559da0-6100-45e1-84e7-85a304a6be21",
+    "FTP": 70,
+    "VO": 10, 
+     "RPM": 98,
+    "KCAL": 300,
+     "startDate": "2022-06-14T17:00:00-07:00",
+    "endDate": "2022-06-14T17:30:00-07:00"
+    }
+    client.post(url, data=json.dumps(data), headers=headers)
+    response = client.get("/sport-session/avg")
+    assert response.status_code == 200
+    assert b"average_results" in response.data
 
